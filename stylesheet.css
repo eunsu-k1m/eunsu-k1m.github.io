@@ -165,3 +165,30 @@ span.highlight {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 15px;
 }
+.image-container {
+    position: relative;
+    width: 80%;
+    max-width: 80%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease;
+    border-radius: 50%;
+}
+
+.image-container img.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.image-container:hover img.default-img {
+    opacity: 0;
+}
+
+.image-container:hover img.hover-img {
+    opacity: 1;
+}
