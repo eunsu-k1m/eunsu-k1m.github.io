@@ -192,3 +192,9 @@ span.highlight {
 .image-container:hover img.hover-img {
     opacity: 1;
 }
+.left {
+  flex-grow: 1;
+}
+.right {
+  white-space: nowrap; /* Prevents the date from wrapping to the next line */
+}
