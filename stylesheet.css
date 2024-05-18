@@ -203,3 +203,18 @@ span.highlight {
 .right {
   white-space: nowrap; /* Prevents the date from wrapping to the next line */
 }
+/* Hide checkbox */
+.toggle-input {
+    display: none;
+}
+
+/* Hide TL;DR content by default */
+.tldr-content {
+    display: none;
+}
+
+/* Show TL;DR content when checkbox is checked */
+.toggle-input:checked ~ .tldr-content {
+    display: block;
+}
+
