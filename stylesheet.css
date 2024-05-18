@@ -192,6 +192,11 @@ span.highlight {
 .image-container:hover img.hover-img {
     opacity: 1;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .left {
   flex-grow: 1;
 }
