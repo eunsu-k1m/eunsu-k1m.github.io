@@ -206,3 +206,10 @@ span.highlight {
 .hidden-text {
     display: none;
 }
+.text-with-image {
+    display: flex;
+    align-items: center;
+}
+.text-with-image img {
+    margin-right: 10px;
+}
