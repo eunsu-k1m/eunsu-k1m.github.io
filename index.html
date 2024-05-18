@@ -180,5 +180,15 @@
         </td>
       </tr>
     </table>
+      <script>
+          function toggleText() {
+              const textElement = document.getElementById('hidden-text');
+              if (textElement.style.display === 'none' || textElement.style.display === '') {
+                  textElement.style.display = 'block';
+              } else {
+                  textElement.style.display = 'none';
+              }
+          }
+      </script>
   </body>
 </html>
