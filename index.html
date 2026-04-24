@@ -1,375 +1,764 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eunsu Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --bg-warm: #F5F0EB;
+      --text: #1A1A1A;
+      --text-muted: #5C5C5C;
+      --accent: #C45D3E;
+      --accent-hover: #A8482D;
+      --link: #2D5F8A;
+      --link-hover: #C45D3E;
+      --border: #E0DCD5;
+      --card-bg: #FFFFFF;
+      --tag-bg: #EDE8E1;
+      --tag-text: #6B5E50;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+      --radius: 10px;
+    }
 
-    <title>Eunsu Kim</title>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <meta name="author" content="Jon Barron">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon/favicon-16x16.png">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+    body {
+      font-family: 'Source Sans 3', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <body>
-    <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Eunsu Kim
-                </p>
-                <!-- Add Audio Player Next to the Name -->
-<!--                 <audio id="namePronunciation" style="vertical-align: middle;" controls>
-                  <source src="https://eunsu-k1m.github.io/eunsu_voice.mp3 type="audio/mpeg">
-                </audio> -->
-                <p class="bigger">
-                  <br>
-                        I am a master's student advised by Professor <a href="https://aliceoh9.github.io/">Alice Oh</a> at the <a href="https://cs.kaist.ac.kr/" class="bigger">School of Computing, KAIST</a>. Previously, I was a visiting scholar at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, working with Professor <a href="https://www.cs.cmu.edu/~sherryw/">Sherry Tongshuang Wu</a>. 
-                      <br><br>
-                      My research aims to develop AI systems and agents that serve as meaningful bridges: connecting individuals, societies, and humans with intelligent agents.
-                      <br>
-                      Currently, I've been focusing on two questions:
-                      (1) How effectively can large language models (LLMs) assist humans in real-world contexts?
-                      (2) How well do they understand and represent diverse multicultural and multilingual societies?
-                      <br><br>
-                      My ongoing projects explore human-AI collaboration and the evaluation of VLLMs’ social and cultural capabilities.
-                    <!-- (i) What to evaluate: Exploring the direction in which LLMs should progress and examining current LLM behavior from that perspective <a href="#3">[3,</a> <a href="#4">4]</a>. (ii) How to evaluate: Developing evaluation frameworks/metrics that measure the true capabilities of LLMs <a href="#2">[2,</a> <a href="#5">5]</a>. (iii) Interesting behaviors during evaluation: Digging into the behaviors observed in (1)&(2) <a href="#1">[1,</a><a href="#5">5]</a>. <br>
-                    I believe accurate evaluation in the proper context can guide LLMs to develop in meaningful and appropriate directions.
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      z-index: 9999;
+    }
 
-                    <br><br> -->
-                    <!-- Currently, I'm working on developing an LLM evaluation framework that is reliable and interpretable, and benchmarking cultural awareness of (V)LM in various interesting scenarios. -->
- 
-                    If you would like to collaborate with me or have any questions, Feel free to contact me!
-                </p>
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-                
-                <div style="text-align: center;">
-                    <a href="kes0317@kaist.ac.kr">Email</a> &nbsp;/&nbsp;
-                    <!-- <a href="data/JonBarron-CV.pdf">CV</a> &nbsp;/&nbsp;
-                    <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp; -->
-                    <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/euns0o-kim/">LinkedIn</a> &nbsp;/&nbsp;
-                    <a href="https://x.com/euns0o_kim">Twitter(X)</a> &nbsp;/&nbsp;
-                    <a href="https://eunsu-k1m.github.io/CV_latest.pdf">CV</a>
-                    <!-- <a href="https://github.com/jonbarron/">Github</a> -->
-                </div>
+    /* ── Hero ── */
+    .hero {
+      padding: 60px 0 50px;
+      position: relative;
+    }
 
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <div  class="image-container">
-                <img src="img/photo.jpg" alt="profile photo" class=default-img"></a>
-                <img src="img/photo2.jpg" alt="hover profile photo" class="hover-img">
-              </td>
-              <div class="hover-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; display: none;">
-                My happiest moment so far!
-              
+    .hero-inner {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
 
-              </div>
-            </tr>
-          </tbody></table>
-          <tr>
-          <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
 
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Affiliations</h2>
-            
-                <div class="education-entry">
-                  <h3>Carnegie Mellon University (CMU)</h3>
-                  <p>
-                    <span class="container">
-                      <em class="left">Visiting Scholar in HCII Computer Science, Host professor: Sherry Wu</em>
-                      <span class="right">2025.09-2026.03</span>
-                    </span>
-                  </p>
-                </div>
-            
-                <div class="education-entry">
-                  <h3>Korea Advanced Institute of Science and Technology (KAIST)</h3>
-                  <p>
-                    <span class="container">
-                      <em class="left">M.S. in Computer Science, Advisor: Alice Oh</em>
-                      <span class="right">2023.09-present</span>
-                    </span>
-                  </p>
-                  <p>
-                    <span class="container">
-                      <em class="left">B.S. in Electrical Engineering</em>
-                      <span class="right">2019.03–2023.08</span>
-                    </span>
-                    <span class="smallicon">&#9679;</span>
-                    <em><strong>GPA: 4.02/4.3, Major GPA: 4.15/4.3 (Summa Cum Laude)</strong></em>
-                  </p>
-                </div>
-              </td>
-            </tr>
-            
-            <!-- Latest News Section -->
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Latest News!</h2>
-                    <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🏆Our <a href="https://arxiv.org/abs/2510.19028">Are they Lovers or Friends?</a> paper has been accepted to ACL 2026 main conference (Oral)!<br>
-                      <strong>Are they lovers or friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues</em>       
-                      <span class="right">Feb 2026</span>
-                    </span>
-                  </p>
-                </div>
-                  <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🏆Our <a href="https://arxiv.org/abs/2511.22787">Culture-Mixing</a> paper will be presented in CVPR conference!<br>
-                      <strong>World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models</em>       
-                      <span class="right">Feb 2026</span>
-                    </span>
-                  </p>
-                </div>
-                <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🏆 Two papers will be presented in Neurips workshop!<br>
-                      <strong>BenchHub: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation</strong> @ Efficient Reasoning Workshop<br>
-                      <strong>ML-IAM: Emulating Integrated Assessment Models With Machine Learning</strong> @ Tackling Climate Change with Machine Learning Workshop</em>                                                                                             
-                      <span class="right">Dec 2025</span>
-                    </span>
-                  </p>
-                </div>
+    .hero-photo {
+      flex-shrink: 0;
+      width: 180px;
+      position: relative;
+    }
 
-                <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🇺🇸 Starting as a visiting student at Carnegie Mellon University (CMU)!</em>
-                      <span class="right">Sep 2025</span>
-                    </span>
-                  </p>
-                </div>
-            
-                <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🏆 Two papers accepted to EMNLP 2025 Findings!<br>
-                      <strong>Uncovering Factor Level Preferences to Improve Human-Model Alignment</strong> | <strong>MUG-Eval</strong></em>                                                                                             
-                      <span class="right">Aug 2025</span>
-                    </span>
-                  </p>
-                </div>
-            
-                <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🏆 Three papers accepted to ACL 2025 — two in Findings and one as Main (Oral)!<br>
-                      <strong>LLM-as-an-Interviewer</strong> | <strong>Spotting Out-of-Character Behavior</strong> | <strong>Diffusion Models Through a Global Lens</strong></em>
-                      <span class="right">May 2025</span>
-                    </span>
-                  </p>
-                </div>
-                <div class="news-entry">
-                  <p>
-                    <span class="container">
-                      <em class="left">🏆 `When Tom Eats Kimchi' paper got outstanding paper awards in NAACL C3NLP! Congrats to my interns! </em>                                                                                               
-                      <span class="right">Mar 2025</span>
-                    </span>
-                  </p>
-                </div>
-              </td>
-            </tr>
+    .hero-photo .photo-frame {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      border: 3px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
 
-            
-            <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>
-  Selected Publications 
-  (<a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en" style="font-size: inherit; color: inherit; text-decoration: none;">See All</a>)
-</h2>
-                <h3>* denotes equal contributions</h3>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                 <!--   cultural-mix  -->
-        <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-            <td style="padding:5px 20px 10px 40px; width:100%; vertical-align:middle;">
-                <strong>
-                    <span class="papertitle"><li id="1">BenchHub: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation</span>
-                </strong>
-                <br>
-                <strong><u>Eunsu Kim</u>*</strong>, Haneul Yoo*, Guijin Son, Hitesh Patel, Amit Agarwal, Alice Oh
-                <br>
-                <em>Preprint, Under Review</em>
-                <br> 
-                <a href="https://arxiv.org/abs/2506.00482">paper</a>
-              
-            </td>
-        </tr>
-                 <!--   cultural-mix  -->
-        <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-            <td style="padding:10px 20px 10px 40px; width:100%; vertical-align:middle;">
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+    }
 
-                <strong>
-                    <span class="papertitle"><li id="1">MUG-Eval: A Proxy Evaluation Framework for Multilingual Generation Capabilities in Any Language</span>
-                </strong>
-                <br>
-                Seyoung Song*, Seogyeong Jeong*, <strong><u>Eunsu Kim</u></strong>, Jiho Jin, Dongkwan Kim, Jay Shin, Alice Oh
-                <br>
-                <em>EMNLP 2025(Findings)</em>
-                <br> 
-                <a href="https://arxiv.org/abs/2505.14395">paper</a>
-              
-            </td>
-        </tr>
+    .hero-photo img.hover-img {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
 
-            <!--   diffusion  -->
-        <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-            <td style="padding:10px 20px 10px 40px; width:100%; vertical-align:middle;">
+    .hero-photo:hover img.default-img { opacity: 0; }
+    .hero-photo:hover img.hover-img { opacity: 1; }
 
-                <strong>
-                    <span class="papertitle"><li id="1">Diffusion Models Through a Global Lens: Are They Culturally Inclusive?</span>
-                </strong>
-                <br>
-                Zahra Bayramli*, Ayhan Suleymanzade*, Na Min An, Huzama Ahmad, <strong><u>Eunsu Kim</u></strong>, Junyeong Park, James Thorne, Alice Oh
-                <br>
-                <em>ACL 2025 (Oral), NAACL 2025 c3NLP workshop</em>
-                <br>
-                <a href="https://arxiv.org/abs/2502.08914">arXiv</a>
-                <a onclick="toggleText('hidden-text-diffusion')">TL;DR</a>
-                <p id="hidden-text-diffusion" class="hidden-text">
-                    Text-to-image diffusion models have recently enabled the creation of visually compelling, detailed images from textual prompts. However, their ability to accurately represent various cultural nuances remains an open question. In our work, we introduce CultDiff benchmark, evaluating state-of-the-art diffusion models whether they can generate culturally specific images spanning ten countries. We show that these models often fail to generate cultural artifacts in architecture, clothing, and food, especially for underrepresented country regions, by conducting a fine-grained analysis of different similarity aspects, revealing significant disparities in cultural relevance, description fidelity, and realism compared to real-world reference images. With the collected human evaluations, we develop a neural-based image-image similarity metric, namely, CultDiff-S, to predict human judgment on real and generated images with cultural artifacts. Our work highlights the need for more inclusive generative AI systems and equitable dataset representation over a wide range of cultures.
-                </p>
-            </td>
-        </tr>
-            
-          <!--   interviewer  -->
-        <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-            <td style="padding:10px 20px 10px 40px; width:100%; vertical-align:middle;">
+    .hero-photo .hover-caption {
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease, bottom 0.3s ease;
+      pointer-events: none;
+    }
 
-                <strong>
-                    <span class="papertitle"><li id="1">LLM-AS-AN-INTERVIEWER: Beyond Static Testing Through Dynamic LLM Evaluation</span>
-                </strong>
-                <br>
-                <strong><u>Eunsu Kim</u></strong>, Juyoung Suk, Seungone Kim, Niklas Muennighoff, Dongkwan Kim, Alice Oh
-                <br>
-                <em>ACL 2025 Findings</em>
-                <br>
-                <a href="https://arxiv.org/abs/2412.10424">arXiv</a>
-                <a href="https://github.com/interview-eval/interview-eval/tree/main">codebase</a>
-                <a onclick="toggleText('hidden-text-interview')">TL;DR</a>
-                <p id="hidden-text-interview" class="hidden-text">
-                    LLM-as-an-Interviewer is an evaluation framework that assesses the capabilities of LLMs through an interview-style process. In this approach, the LLM acting as the interviewer evaluates other LLMs by providing feedback and asking follow-up questions, enabling a more comprehensive assessment of their capabilities.
+    .hero-photo:hover .hover-caption {
+      opacity: 1;
+      bottom: -4px;
+    }
 
-                </p>
-            </td>
-        </tr>
-             <!--   /ICLR 2025: PROFILE  -->
-            <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-              <td style="padding:10px 20px 10px 40px; width:100%; vertical-align:middle;">
-              <strong>
-                <span class="papertitle"><li id="5">Uncovering Factor Level Preferences to Improve Human-Model Alignment</span>
-              </strong>
-              <br>
-              Juhyun Oh*, <strong><u>Eunsu Kim*</u></strong>, Jiseon Kim, Wenda Xu, William Yang Wang, Alice Oh
-              <br>
-              <em>EMNLP 2025 (Findings)
-              <br>
-              <a href="https://arxiv.org/pdf/2410.06965">arXiv</a>
-                            <br>
-              </td>
-          </tr>
-          <!--    /ICLR 2025: PROFILE   -->                
-            
-          <!--   /NIPS 2024: BLEND  -->
-          <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-              <td style="padding:10px 20px 10px 40px; width:100%; vertical-align:middle;">
-              <strong>
-                <span class="papertitle"><li id="4">BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages</span>
-              </strong>
-              <br>
-          Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Afina Putri, Dimosthenis Antypas, Hsuvas Borkakoty,<strong><u>Eunsu Kim</u></strong>, Carla Perez-Almendros, Abinew Ali Ayele, Víctor Gutiérrez-Basulto, Yazmín Ibáñez-García, Hwaran Lee, Shamsuddeen Hassan Muhammad, Kiwoong Park, Anar Sabuhi Rzayev, Nina White, Seid Muhie Yimam, Mohammad Taher Pilehvar, Nedjma Ousidhoum, Jose Camacho-Collados, Alice Oh
-              <br>
-              <em>Neurips D&B, 2025
-              <br>
-              <a href="https://arxiv.org/abs/2406.09948">arXiv</a>
-              <a href="https://huggingface.co/datasets/nayeon212/BLEnD">Dataset</a>
-              <a onclick="toggleText('hidden-text-blend')">TL;DR</a>
-              <p id="hidden-text-blend" class="hidden-text">
-              Large language models (LLMs) often lack culture-specific knowledge of daily life, especially across diverse regions and non-English languages. Existing benchmarks for evaluating LLMs' cultural sensitivities are limited to a single language or collected from online sources such as Wikipedia, which do not reflect the mundane everyday lifestyles of diverse regions. That is, information about the food people eat for their birthday celebrations, spices they typically use, musical instruments youngsters play, or the sports they practice in school is common cultural knowledge but uncommon in easily collected online sources, especially for underrepresented cultures. To address this issue, we introduce BLEnD, a hand-crafted benchmark designed to evaluate LLMs' everyday knowledge across diverse cultures and languages. BLEnD comprises 52.6k question-answer pairs from 16 countries/regions, in 13 different languages, including low-resource ones such as Amharic, Assamese, Azerbaijani, Hausa, and Sundanese. We construct the benchmark to include two formats of questions: short-answer and multiple-choice. We show that LLMs perform better for cultures that are highly represented online, with a maximum 57.34% difference in GPT-4, the best-performing model, in the short-answer format. For cultures represented by mid-to-high-resource languages, LLMs perform better in their local languages, but for cultures represented by low-resource languages, LLMs perform better in English than the local languages.               </p>
-            </td>
-          </tr>
-          <!--   /NIPS 2024: BLEND  -->    
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 42px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
 
+    .bio {
+      font-size: 15.5px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
 
-          <!--   /LREC-COLING 2024: CLIcK  -->
-          <tr onmouseout="smerf_stop()" onmouseover="smerf_start()">
-              <td style="padding:10px 20px 10px 40px; width:100%; vertical-align:middle;">
-              <strong>
-                <span class="papertitle"><li id="3">CLIcK: Evaluation of Cultural and Linguistic Intelligence in Korean</span>
-              </strong>
-              <br>
-          <strong><u>Eunsu Kim</u></strong>,
-          Juyoung Suk, Philhoon Oh, Haneul Yoo, James Thorne, Alice Oh
-              <br>
-              <em>LREC-COLING 2024
-              <br>
-              <a href="https://arxiv.org/abs/2403.06412">arXiv</a>
-              <a href="https://github.com/rladmstn1714/CLIcK">Dataset</a>
-              <a onclick="toggleText('hidden-text-click')">TL;DR</a>
-              <p id="hidden-text-click" class="hidden-text">
-               <img src='img/CLICK.png' width=30%><br>
-              We construct and release CLIcK, a culturally-aware evaluation benchmark dataset encompassing 1,995 instances across 11 categories representing facets of the Korean culture, ranging from everyday life to specific subject areas, as well as Korean grammar and linguistics.
-              </p>
-            </td>
-          </tr>
-          <!--   /LREC-COLING 2024: CLIcK  -->      
-       
+    .bio a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s;
+      font-weight: 400;
+    }
+    .bio a:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
 
-          <!--   /EACL 2024 : paradox  -->
-        
-        <!-- 이전 섹션 마무리 -->
-        </tbody></table>
-        
-        <!-- Misc 섹션 (새 테이블로 감싸기) -->
-        <table style="width:100%;max-width:850px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody>
-            <tr>
-              <td style="padding:20px 20px 20px 40px; width:100%; vertical-align:middle;">
-                <h2>Misc</h2>
-        
-                <!-- 문단 기본 마진이 커 보이면 margin을 줄여주세요 -->
-                <p class="bigger" style="margin:8px 0 0 0;">
-                  Besides research, I love bread 🥯🥐🥨, table tennis 🏓, and learning new sports. I recently started tennis and yoga!
-                </p>
-        
-                <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                  <tbody>
-                    <tr>
-                      <td style="padding:0">
-                        <p style="text-align:right;font-size:small;margin:16px 0 0 0;">
-                          Template from <a href="https://jonbarron.info/">Jon Barron's</a> wonderful work.
-                        </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-        
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    .research-focus {
+      margin: 18px 0;
+      padding: 16px 20px;
+      background: var(--bg-warm);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent);
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
 
-      <script>
-          function toggleText(id) {
-              const textElement = document.getElementById(id);
-              if (textElement.style.display === 'none' || textElement.style.display === '') {
-                  textElement.style.display = 'block';
-              } else {
-                  textElement.style.display = 'none';
-              }
-          }
-      </script>
-  </body>
+    .research-focus strong {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14.5px;
+    }
+
+    .links-bar {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .links-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .links-bar a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    /* ── Section Headings ── */
+    .section {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .section-title .see-all {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 400;
+      border-bottom: 1px dashed var(--border);
+      transition: all 0.2s;
+    }
+    .section-title .see-all:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Affiliations ── */
+    .affiliation {
+      margin-bottom: 20px;
+      padding-left: 18px;
+      border-left: 2px solid var(--border);
+    }
+
+    .affiliation h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    .affiliation-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 3px 0;
+      gap: 16px;
+    }
+
+    .affiliation-detail em { font-style: italic; font-weight: 300; }
+    .affiliation-detail .date {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--tag-text);
+      white-space: nowrap;
+      background: var(--tag-bg);
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+
+    .gpa {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ── News ── */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeSlideIn 0.4s ease forwards;
+    }
+    .news-item:last-child { border-bottom: none; }
+
+    .news-date {
+      flex-shrink: 0;
+      width: 80px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .news-content {
+      flex: 1;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .news-content a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .news-content a:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
+
+    .news-content strong {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .news-icon {
+      margin-right: 4px;
+    }
+
+    /* ── Publications ── */
+    .pub-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .pub-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 14px;
+      transition: all 0.25s ease;
+      opacity: 0;
+      animation: fadeSlideIn 0.4s ease forwards;
+    }
+
+    .pub-card:hover {
+      border-color: #ccc;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .pub-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .pub-authors {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .pub-authors .me {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .pub-venue {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--tag-text);
+      margin-bottom: 10px;
+    }
+
+    .pub-venue .venue-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      font-style: normal;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pub-links a {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--link);
+      text-decoration: none;
+      padding: 3px 12px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.2s;
+    }
+
+    .pub-links a:hover {
+      background: var(--link);
+      color: #fff;
+      border-color: var(--link);
+    }
+
+    .pub-tldr {
+      margin-top: 12px;
+      padding: 14px 16px;
+      background: var(--bg-warm);
+      border-radius: 8px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .pub-tldr.show { display: block; }
+
+    .pub-links .tldr-btn {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* ── Misc / Footer ── */
+    .misc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 30px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #B0A89E;
+    }
+
+    .footer a {
+      color: #B0A89E;
+      text-decoration: none;
+      border-bottom: 1px dashed #ccc;
+    }
+    .footer a:hover { color: var(--accent); }
+
+    /* ── Animations ── */
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .news-item:nth-child(1) { animation-delay: 0.05s; }
+    .news-item:nth-child(2) { animation-delay: 0.1s; }
+    .news-item:nth-child(3) { animation-delay: 0.15s; }
+    .news-item:nth-child(4) { animation-delay: 0.2s; }
+    .news-item:nth-child(5) { animation-delay: 0.25s; }
+    .news-item:nth-child(6) { animation-delay: 0.3s; }
+    .news-item:nth-child(7) { animation-delay: 0.35s; }
+
+    .pub-card:nth-child(2) { animation-delay: 0.05s; }
+    .pub-card:nth-child(3) { animation-delay: 0.1s; }
+    .pub-card:nth-child(4) { animation-delay: 0.15s; }
+    .pub-card:nth-child(5) { animation-delay: 0.2s; }
+    .pub-card:nth-child(6) { animation-delay: 0.25s; }
+    .pub-card:nth-child(7) { animation-delay: 0.3s; }
+    .pub-card:nth-child(8) { animation-delay: 0.35s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .hero-inner {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 28px;
+        text-align: center;
+      }
+      h1 { font-size: 34px; }
+      .hero-photo { width: 140px; }
+      .hero-photo .photo-frame { width: 140px; height: 140px; }
+      .links-bar { justify-content: center; }
+      .research-focus { text-align: left; }
+      .affiliation-detail { flex-direction: column; gap: 4px; }
+      .affiliation-detail .date { align-self: flex-start; }
+      .news-item { flex-direction: column; gap: 6px; }
+      .news-date { width: auto; align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ════ HERO ════ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Eunsu Kim</h1>
+          <p class="bio">
+            I am a master's student advised by Professor <a href="https://aliceoh9.github.io/">Alice Oh</a> at the <a href="https://cs.kaist.ac.kr/">School of Computing, KAIST</a>. Previously, I was a visiting scholar at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, working with Professor <a href="https://www.cs.cmu.edu/~sherryw/">Sherry Tongshuang Wu</a>.
+          </p>
+
+          <p class="bio" style="margin-top: 14px;">
+            My research aims to develop AI systems and agents that serve as meaningful bridges — connecting individuals, societies, and humans with intelligent agents.
+            Currently, I focus on two questions: (1) How effectively can LLMs assist humans in real-world contexts? (2) How well do they understand and represent diverse multicultural and multilingual societies?
+          </p>
+
+          <p class="bio" style="margin-top: 14px;">
+            My ongoing projects explore human-AI collaboration and the evaluation of VLLMs' social and cultural capabilities. Feel free to reach out if you'd like to collaborate!
+          </p>
+
+          <div class="links-bar">
+            <a href="mailto:kes0317@kaist.ac.kr">&#9993; Email</a>
+            <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en">&#127891; Scholar</a>
+            <a href="https://www.linkedin.com/in/euns0o-kim/">&#128101; LinkedIn</a>
+            <a href="https://x.com/euns0o_kim">&#120143; Twitter</a>
+            <a href="https://eunsu-k1m.github.io/CV_latest.pdf">&#128196; CV</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <div class="photo-frame">
+            <img src="img/photo.jpg" alt="Eunsu Kim" class="default-img">
+            <img src="img/photo2.jpg" alt="Eunsu Kim smiling" class="hover-img">
+          </div>
+          <span class="hover-caption">My happiest moment so far!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ AFFILIATIONS ════ -->
+    <section class="section">
+      <h2 class="section-title">Affiliations</h2>
+
+      <div class="affiliation">
+        <h3>Carnegie Mellon University</h3>
+        <div class="affiliation-detail">
+          <em>Visiting Scholar in HCII, Host: Sherry Wu</em>
+          <span class="date">Sep 2025 – Mar 2026</span>
+        </div>
+      </div>
+
+      <div class="affiliation">
+        <h3>KAIST</h3>
+        <div class="affiliation-detail">
+          <em>M.S. in Computer Science, Advisor: Alice Oh</em>
+          <span class="date">Sep 2023 – Present</span>
+        </div>
+        <div class="affiliation-detail">
+          <em>B.S. in Electrical Engineering</em>
+          <span class="date">Mar 2019 – Aug 2023</span>
+        </div>
+        <div class="gpa">GPA 4.02 / 4.3 · Major 4.15 / 4.3 · Summa Cum Laude</div>
+      </div>
+    </section>
+
+    <!-- ════ NEWS ════ -->
+    <section class="section">
+      <h2 class="section-title">Latest News</h2>
+      <div class="news-list">
+
+        <div class="news-item">
+          <span class="news-date">Feb 2026</span>
+          <div class="news-content">
+            <span class="news-icon">&#127942;</span>
+            <a href="https://arxiv.org/abs/2510.19028">Are they Lovers or Friends?</a> accepted to <strong>ACL 2026 Main (Oral)</strong>!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Feb 2026</span>
+          <div class="news-content">
+            <span class="news-icon">&#127942;</span>
+            <a href="https://arxiv.org/abs/2511.22787">Culture-Mixing</a> paper to be presented at <strong>CVPR 2026</strong>!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Dec 2025</span>
+          <div class="news-content">
+            <span class="news-icon">&#127942;</span>
+            Two papers at <strong>NeurIPS 2025 Workshops</strong>: <strong>BenchHub</strong> @ Efficient Reasoning &amp; <strong>ML-IAM</strong> @ Climate Change with ML
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Sep 2025</span>
+          <div class="news-content">
+            <span class="news-icon">&#127482;&#127480;</span>
+            Starting as a visiting student at Carnegie Mellon University!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Aug 2025</span>
+          <div class="news-content">
+            <span class="news-icon">&#127942;</span>
+            Two papers accepted to <strong>EMNLP 2025 Findings</strong>: <strong>Uncovering Factor Level Preferences</strong> &amp; <strong>MUG-Eval</strong>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">May 2025</span>
+          <div class="news-content">
+            <span class="news-icon">&#127942;</span>
+            Three papers at <strong>ACL 2025</strong> — two Findings + one Main (Oral)!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <span class="news-date">Mar 2025</span>
+          <div class="news-content">
+            <span class="news-icon">&#127942;</span>
+            "When Tom Eats Kimchi" won <strong>Outstanding Paper Award</strong> at NAACL C3NLP!
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════ PUBLICATIONS ════ -->
+    <section class="section">
+      <h2 class="section-title">
+        Selected Publications
+        <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en" class="see-all">See all &rarr;</a>
+      </h2>
+      <p class="pub-note">* denotes equal contributions</p>
+
+      <!-- BenchHub -->
+      <div class="pub-card">
+        <div class="pub-title">BenchHub: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation</div>
+        <div class="pub-authors"><span class="me">Eunsu Kim</span>*, Haneul Yoo*, Guijin Son, Hitesh Patel, Amit Agarwal, Alice Oh</div>
+        <div class="pub-venue">Preprint, Under Review</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2506.00482">Paper</a>
+        </div>
+      </div>
+
+      <!-- MUG-Eval -->
+      <div class="pub-card">
+        <div class="pub-title">MUG-Eval: A Proxy Evaluation Framework for Multilingual Generation Capabilities in Any Language</div>
+        <div class="pub-authors">Seyoung Song*, Seogyeong Jeong*, <span class="me">Eunsu Kim</span>, Jiho Jin, Dongkwan Kim, Jay Shin, Alice Oh</div>
+        <div class="pub-venue">EMNLP 2025 (Findings)</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2505.14395">Paper</a>
+        </div>
+      </div>
+
+      <!-- Diffusion Global Lens -->
+      <div class="pub-card">
+        <div class="pub-title">Diffusion Models Through a Global Lens: Are They Culturally Inclusive?</div>
+        <div class="pub-authors">Zahra Bayramli*, Ayhan Suleymanzade*, Na Min An, Huzama Ahmad, <span class="me">Eunsu Kim</span>, Junyeong Park, James Thorne, Alice Oh</div>
+        <div class="pub-venue">ACL 2025 <span class="venue-badge">Oral</span>, NAACL 2025 C3NLP Workshop</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2502.08914">arXiv</a>
+          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
+        </div>
+        <div class="pub-tldr">
+          Text-to-image diffusion models can create compelling images from prompts, but their ability to represent cultural nuances remains limited. This work introduces the CultDiff benchmark, evaluating models on generating culturally specific images across ten countries, revealing significant disparities in cultural relevance, especially for underrepresented regions.
+        </div>
+      </div>
+
+      <!-- LLM-as-an-Interviewer -->
+      <div class="pub-card">
+        <div class="pub-title">LLM-as-an-Interviewer: Beyond Static Testing Through Dynamic LLM Evaluation</div>
+        <div class="pub-authors"><span class="me">Eunsu Kim</span>, Juyoung Suk, Seungone Kim, Niklas Muennighoff, Dongkwan Kim, Alice Oh</div>
+        <div class="pub-venue">ACL 2025 (Findings)</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2412.10424">arXiv</a>
+          <a href="https://github.com/interview-eval/interview-eval/tree/main">Code</a>
+          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
+        </div>
+        <div class="pub-tldr">
+          An evaluation framework that assesses LLM capabilities through an interview-style process. The interviewer LLM evaluates other LLMs by providing feedback and asking follow-up questions, enabling more comprehensive capability assessment beyond static benchmarks.
+        </div>
+      </div>
+
+      <!-- Factor Level Preferences -->
+      <div class="pub-card">
+        <div class="pub-title">Uncovering Factor Level Preferences to Improve Human-Model Alignment</div>
+        <div class="pub-authors">Juhyun Oh*, <span class="me">Eunsu Kim</span>*, Jiseon Kim, Wenda Xu, William Yang Wang, Alice Oh</div>
+        <div class="pub-venue">EMNLP 2025 (Findings)</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2410.06965">arXiv</a>
+        </div>
+      </div>
+
+      <!-- BLEnD -->
+      <div class="pub-card">
+        <div class="pub-title">BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages</div>
+        <div class="pub-authors">Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Afina Putri, Dimosthenis Antypas, Hsuvas Borkakoty, <span class="me">Eunsu Kim</span>, et al.</div>
+        <div class="pub-venue">NeurIPS D&amp;B 2025</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2406.09948">arXiv</a>
+          <a href="https://huggingface.co/datasets/nayeon212/BLEnD">Dataset</a>
+          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
+        </div>
+        <div class="pub-tldr">
+          A hand-crafted benchmark evaluating LLMs' everyday cultural knowledge across 16 countries/regions in 13 languages, including low-resource ones. Results show LLMs perform significantly better for cultures highly represented online, with up to a 57% gap in GPT-4 performance.
+        </div>
+      </div>
+
+      <!-- CLIcK -->
+      <div class="pub-card">
+        <div class="pub-title">CLIcK: Evaluation of Cultural and Linguistic Intelligence in Korean</div>
+        <div class="pub-authors"><span class="me">Eunsu Kim</span>, Juyoung Suk, Philhoon Oh, Haneul Yoo, James Thorne, Alice Oh</div>
+        <div class="pub-venue">LREC-COLING 2024</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2403.06412">arXiv</a>
+          <a href="https://github.com/rladmstn1714/CLIcK">Dataset</a>
+          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
+        </div>
+        <div class="pub-tldr">
+          A culturally-aware evaluation benchmark with 1,995 instances across 11 categories of Korean culture, spanning everyday life to specialized subjects, as well as Korean grammar and linguistics.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ════ MISC ════ -->
+    <section class="section">
+      <h2 class="section-title">Beyond Research</h2>
+      <p class="misc">
+        I love bread &#129391;&#129360;&#129384;, table tennis &#127955;, and learning new sports. I recently started tennis and yoga!
+      </p>
+    </section>
+
+    <footer class="footer">
+      Template inspired by <a href="https://jonbarron.info/">Jon Barron</a>'s wonderful work.
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleTldr(btn) {
+      const tldr = btn.closest('.pub-card').querySelector('.pub-tldr');
+      tldr.classList.toggle('show');
+      btn.textContent = tldr.classList.contains('show') ? 'Hide' : 'TL;DR';
+    }
+  </script>
+
+</body>
 </html>
