@@ -282,6 +282,24 @@
       display: flex;
       flex-direction: column;
       gap: 0;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+
+    .news-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .news-list::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 999px;
+    }
+
+    .news-list::-webkit-scrollbar-track {
+      background: transparent;
     }
 
     .news-item {
@@ -507,6 +525,7 @@
       .research-focus { text-align: left; }
       .affiliation-detail { flex-direction: column; gap: 4px; }
       .affiliation-detail .date { align-self: flex-start; }
+      .news-list { max-height: 300px; padding-right: 6px; }
       .news-item { flex-direction: column; gap: 6px; }
       .news-date { width: auto; align-self: flex-start; }
     }
