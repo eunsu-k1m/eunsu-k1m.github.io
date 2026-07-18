@@ -55,17 +55,17 @@
       padding: 0 28px;
     }
   .pub-tag {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 10px;
-      margin-left: 6px;
-      vertical-align: middle;
-      border-radius: 5px;
-      letter-spacing: 0.2px;
-      color: #fff;
-    }
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-radius: 5px;
+    letter-spacing: 0.2px;
+    color: #fff;
+  }
     /* ── Hero ── */
     .hero {
       padding: 60px 0 50px;
@@ -359,8 +359,39 @@
     .pub-note {
       font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 12px;
       font-style: italic;
+    }
+
+    .pub-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+
+    .pub-filter-btn {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid #DDE3EE;
+      padding: 6px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pub-filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .pub-filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
     }
 
 .pub-card {
@@ -555,7 +586,7 @@
         <h3>KAIST</h3>
         <div class="affiliation-detail">
           <em>M.S. in Computer Science, Advisor: Alice Oh</em>
-          <span class="date">Sep 2023 – Aug 2026</span>
+          <span class="date">Sep 2023 – Present</span>
         </div>
         <div class="affiliation-detail">
           <em>B.S. in Electrical Engineering</em>
@@ -633,10 +664,11 @@
  <!-- ════ PUBLICATIONS ════ -->
 <section class="section">
   <h2 class="section-title">
-    Publications
+    Selected Publications
     <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en" class="see-all">See all &rarr;</a>
   </h2>
   <p class="pub-note">* denotes equal contributions</p>
+  <div id="pub-filters" class="pub-filters"></div>
   <div id="pub-list"><p class="pub-note">Loading...</p></div>
 </section>
 
@@ -701,6 +733,55 @@ function parseCSV(text) {
   return rows.filter(r => r.length > 1 || r[0] !== '');
 }
 
+let allPubs = [];
+let activeTag = 'All';
+
+function renderPub(pub, i) {
+  const tagHtml = pub.tags.map(t =>
+    `<span class="pub-tag" style="background:${getTagColor(t)}">${t}</span>`
+  ).join('');
+
+  return `
+    <div class="pub-card" style="animation-delay:${i * 0.05}s">
+      <div class="pub-title">${pub.title}${tagHtml}</div>
+      <div class="pub-authors">${pub.authors}</div>
+      <div class="pub-venue">${pub.venue}</div>
+      <div class="pub-links">${pub.links.join('')}</div>
+    </div>`;
+}
+
+function renderPubList() {
+  const container = document.getElementById('pub-list');
+  const filtered = activeTag === 'All'
+    ? allPubs
+    : allPubs.filter(p => p.tags.includes(activeTag));
+
+  container.innerHTML = filtered.length
+    ? filtered.map(renderPub).join('')
+    : '<p class="pub-note">No publications match this tag.</p>';
+}
+
+function renderPubFilters() {
+  const filterContainer = document.getElementById('pub-filters');
+  const tagSet = [];
+  allPubs.forEach(p => p.tags.forEach(t => { if (!tagSet.includes(t)) tagSet.push(t); }));
+
+  const tags = ['All', ...tagSet];
+  filterContainer.innerHTML = tags.map(t =>
+    `<button type="button" class="pub-filter-btn${t === activeTag ? ' active' : ''}" data-tag="${t}">${t}</button>`
+  ).join('');
+
+  filterContainer.querySelectorAll('.pub-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeTag = btn.dataset.tag;
+      filterContainer.querySelectorAll('.pub-filter-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.tag === activeTag)
+      );
+      renderPubList();
+    });
+  });
+}
+
 async function loadPublications() {
   const container = document.getElementById('pub-list');
   try {
@@ -721,29 +802,24 @@ async function loadPublications() {
       tag: headers.indexOf('tag'),
     };
 
-    container.innerHTML = data.map((r, i) => {
-      const title = r[idx.title] || '';
-      const authors = (r[idx.authors] || '').replace('Eunsu Kim', '<span class="me">Eunsu Kim</span>');
-      const venue = r[idx.venue] || '';
-      const tags = (r[idx.tag] || '').split(';').map(t => t.trim()).filter(Boolean);
-      const tagHtml = tags.map(t =>
-        `<span class="pub-tag" style="background:${getTagColor(t)}">${t}</span>`
-      ).join('');
-
+    allPubs = data.map(r => {
       const links = [];
       if (r[idx.paper]) links.push(`<a href="${r[idx.paper]}">Paper</a>`);
       if (r[idx.website]) links.push(`<a href="${r[idx.website]}">Website</a>`);
       if (r[idx.code]) links.push(`<a href="${r[idx.code]}">Code</a>`);
       if (r[idx.dataset]) links.push(`<a href="${r[idx.dataset]}">Dataset</a>`);
 
-      return `
-        <div class="pub-card" style="animation-delay:${i * 0.05}s">
-          <div class="pub-title">${title}${tagHtml}</div>
-          <div class="pub-authors">${authors}</div>
-          <div class="pub-venue">${venue}</div>
-          <div class="pub-links">${links.join('')}</div>
-        </div>`;
-    }).join('');
+      return {
+        title: r[idx.title] || '',
+        authors: (r[idx.authors] || '').replace('Eunsu Kim', '<span class="me">Eunsu Kim</span>'),
+        venue: r[idx.venue] || '',
+        tags: (r[idx.tag] || '').split(';').map(t => t.trim()).filter(Boolean),
+        links,
+      };
+    });
+
+    renderPubFilters();
+    renderPubList();
   } catch (err) {
     container.innerHTML = '<p class="pub-note">Failed to load publications.</p>';
     console.error(err);
