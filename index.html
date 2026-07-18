@@ -791,9 +791,9 @@ async function loadPublications() {
       ).join('');
 
       const links = [];
-      if (r[idx.paper]) links.push(`<a href="${r[idx.paper]}">arXiv</a>`);
-      if (r[idx.code]) links.push(`<a href="${r[idx.code]}">Code</a>`);
+      if (r[idx.paper]) links.push(`<a href="${r[idx.paper]}">Paper</a>`);
       if (r[idx.website]) links.push(`<a href="${r[idx.website]}">Website</a>`);
+      if (r[idx.code]) links.push(`<a href="${r[idx.code]}">Code</a>`);
       if (r[idx.dataset]) links.push(`<a href="${r[idx.dataset]}">Dataset</a>`);
 
       return `
