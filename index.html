@@ -116,6 +116,33 @@
     .hero-photo:hover img.default-img { opacity: 0; }
     .hero-photo:hover img.hover-img { opacity: 1; }
 
+    .hero-photo .photo-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 34px;
+      height: 34px;
+      background: #fff;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      color: var(--accent);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-photo .photo-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-photo:hover .photo-badge {
+      transform: scale(1.15);
+      box-shadow: 0 4px 14px rgba(124,77,255,0.35);
+    }
+
     .hero-photo .hover-caption {
       position: absolute;
       top: 100%;
@@ -544,9 +571,7 @@
         <div class="hero-text">
           <h1>Eunsu Kim</h1>
           <p class="bio">
-            I am an incoming Ph.D. student at CMU LTI, advised by Prof. <a href="https://www.cs.cmu.edu/~sherryw/">Sherry Tongshuang Wu</a>.
-Before joining CMU, I was a master's student advised by Prof. <a href="https://aliceoh9.github.io/">Alice Oh</a> at the <a href="https://cs.kaist.ac.kr/">School of Computing, KAIST</a>, and a visiting scholar at CMU HCII.
-    
+            I am an incoming Ph.D. student at <a href="https://lti.cs.cmu.edu/">CMU LTI</a>, advised by Professor <a href="https://www.cs.cmu.edu/~sherryw/">Sherry Tongshuang Wu</a>. Before joining CMU, I was a master's student advised by Professor <a href="https://aliceoh9.github.io/">Alice Oh</a> at the <a href="https://cs.kaist.ac.kr/">School of Computing, KAIST</a>, and a visiting scholar at CMU HCII.
           </p>
 
           <div class="links-bar">
@@ -563,6 +588,12 @@ Before joining CMU, I was a master's student advised by Prof. <a href="https://a
             <img src="img/photo.jpg" alt="Eunsu Kim" class="default-img">
             <img src="img/photo2.jpg" alt="Eunsu Kim smiling" class="hover-img">
           </div>
+          <span class="photo-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="13" height="13" rx="2"></rect>
+              <path d="M21 8v10a2 2 0 0 1-2 2H9"></path>
+            </svg>
+          </span>
           <span class="hover-caption">My happiest moment so far!<br>&#128205; Ponte Luís I, Porto</span>
         </div>
       </div>
@@ -588,7 +619,7 @@ Before joining CMU, I was a master's student advised by Prof. <a href="https://a
         <h3>KAIST</h3>
         <div class="affiliation-detail">
           <em>M.S. in Computer Science, Advisor: Alice Oh</em>
-          <span class="date">Sep 2023 – Aug 2026</span>
+          <span class="date">Sep 2023 – Present</span>
         </div>
         <div class="affiliation-detail">
           <em>B.S. in Electrical Engineering</em>
