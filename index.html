@@ -54,7 +54,18 @@
       margin: 0 auto;
       padding: 0 28px;
     }
-
+  .pub-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 4px;
+    margin-right: 8px;
+    letter-spacing: 0.2px;
+    vertical-align: middle;
+  }
+  .pub-tag.eval { background: #EEEAF6; color: #5B3FC4; }
+  .pub-tag.social { background: #FDEEE6; color: #C4633F; }
     /* ── Hero ── */
     .hero {
       padding: 60px 0 50px;
@@ -565,17 +576,17 @@
             I am a master's student advised by Professor <a href="https://aliceoh9.github.io/">Alice Oh</a> at the <a href="https://cs.kaist.ac.kr/">School of Computing, KAIST</a>. Previously, I was a visiting scholar at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, working with Professor <a href="https://www.cs.cmu.edu/~sherryw/">Sherry Tongshuang Wu</a>.
           </p>
 
-          <p class="bio" style="margin-top: 14px;">
+          <!-- <p class="bio" style="margin-top: 14px;">
             I am currently interested in the science of evaluation: what and how we should evaluate in AI systems, with the broader goal of helping everyday users, researchers, and other stakeholders interact and collaborate more effectively with AI.
             Feel free to reach out if you'd like to collaborate!
-          </p>
+          </p> -->
 
           <div class="links-bar">
-            <a href="mailto:kes0317@kaist.ac.kr">; Email</a>
-            <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en">; Scholar</a>
-            <a href="https://www.linkedin.com/in/euns0o-kim/">; LinkedIn</a>
-            <a href="https://x.com/euns0o_kim">; Twitter</a>
-            <a href="https://eunsu-k1m.github.io/CV_latest.pdf">; CV</a>
+            <a href="mailto:kes0317@kaist.ac.kr">Email</a>
+            <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en">Scholar</a>
+            <a href="https://www.linkedin.com/in/euns0o-kim/">LinkedIn</a>
+            <a href="https://x.com/euns0o_kim">Twitter</a>
+            <a href="https://eunsu-k1m.github.io/CV_latest.pdf">CV</a>
           </div>
         </div>
 
@@ -697,94 +708,31 @@
       </div>
     </section>
 
-    <!-- ════ PUBLICATIONS ════ -->
+ <!-- ════ PUBLICATIONS ════ -->
     <section class="section">
       <h2 class="section-title">
         Selected Publications
         <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en" class="see-all">See all &rarr;</a>
       </h2>
       <p class="pub-note">* denotes equal contributions</p>
-   <h3 class="pub-subsection">LLM Evaluation</h3>
- 
-      <!-- BenchHub -->
-      <div class="pub-card">
-        <div class="pub-title">BenchHub: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation</div>
-        <div class="pub-authors"><span class="me">Eunsu Kim</span>*, Haneul Yoo*, Guijin Son, Hitesh Patel, Amit Agarwal, Alice Oh</div>
-        <div class="pub-venue">Preprint, Under Review</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2506.00482">Paper</a>
-        </div>
-      </div>
-
-      <!-- MUG-Eval -->
-      <div class="pub-card">
-        <div class="pub-title">MUG-Eval: A Proxy Evaluation Framework for Multilingual Generation Capabilities in Any Language</div>
-        <div class="pub-authors">Seyoung Song*, Seogyeong Jeong*, <span class="me">Eunsu Kim</span>, Jiho Jin, Dongkwan Kim, Jay Shin, Alice Oh</div>
-        <div class="pub-venue">EMNLP 2025 (Findings)</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2505.14395">Paper</a>
-        </div>
-      </div>
-
-      <!-- LLM-as-an-Interviewer -->
-      <div class="pub-card">
-        <div class="pub-title">LLM-as-an-Interviewer: Beyond Static Testing Through Dynamic LLM Evaluation</div>
-        <div class="pub-authors"><span class="me">Eunsu Kim</span>, Juyoung Suk, Seungone Kim, Niklas Muennighoff, Dongkwan Kim, Alice Oh</div>
-        <div class="pub-venue">ACL 2025 (Findings)</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2412.10424">arXiv</a>
-          <a href="https://github.com/interview-eval/interview-eval/tree/main">Code</a>
-          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
-        </div>
-        <div class="pub-tldr">
-          An evaluation framework that assesses LLM capabilities through an interview-style process. The interviewer LLM evaluates other LLMs by providing feedback and asking follow-up questions, enabling more comprehensive capability assessment beyond static benchmarks.
-        </div>
-      </div>
-
-      <!-- Factor Level Preferences -->
-      <div class="pub-card">
-        <div class="pub-title">Uncovering Factor Level Preferences to Improve Human-Model Alignment</div>
-        <div class="pub-authors">Juhyun Oh*, <span class="me">Eunsu Kim</span>*, Jiseon Kim, Wenda Xu, William Yang Wang, Alice Oh</div>
-        <div class="pub-venue">EMNLP 2025 (Findings)</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/pdf/2410.06965">arXiv</a>
-        </div>
-      </div>
-
-    </section>
-      <h3 class="pub-subsection">Social &amp; Cultural Aspects of (V)LLMs</h3>
 
       <!-- Are they Lovers or Friends? -->
       <div class="pub-card">
         <div class="pub-title">Are they Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues</div>
         <div class="pub-authors"><span class="me">Eunsu Kim</span>, Junyeong Park, Juhyun Oh, Kiwoong Park, Seyoung Song, A. Seza Doğruöz, Alice Oh, Najoung Kim</div>
-        <div class="pub-venue">ACL 2026 </div>
+        <div class="pub-venue"><span class="pub-tag social">Social &amp; Cultural</span>ACL 2026</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2510.19028">arXiv</a>
         </div>
       </div>
- 
+
       <!-- Culture-Mixing -->
       <div class="pub-card">
         <div class="pub-title">World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models</div>
         <div class="pub-authors"><span class="me">Eunsu Kim</span>*, Junyeong Park*, Na Min An*, Junseong Kim, Hitesh Laxmichand Patel, Jiho Jin, Julia Kruk, Amit Agarwal, Srikant Panda, Fenal Ashokbhai Ilasariya, Hyunjung Shim, Alice Oh</div>
-        <div class="pub-venue">CVPR 2026</div>
+        <div class="pub-venue"><span class="pub-tag social">Social &amp; Cultural</span>CVPR 2026</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2511.22787">arXiv</a>
-        </div>
-      </div>
-
-      <!-- Diffusion Global Lens -->
-      <div class="pub-card">
-        <div class="pub-title">Diffusion Models Through a Global Lens: Are They Culturally Inclusive?</div>
-        <div class="pub-authors">Zahra Bayramli*, Ayhan Suleymanzade*, Na Min An, Huzama Ahmad, <span class="me">Eunsu Kim</span>, Junyeong Park, James Thorne, Alice Oh</div>
-        <div class="pub-venue">ACL 2025 <span class="venue-badge">Oral</span>, NAACL 2025 C3NLP Workshop</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2502.08914">arXiv</a>
-          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
-        </div>
-        <div class="pub-tldr">
-          Text-to-image diffusion models can create compelling images from prompts, but their ability to represent cultural nuances remains limited. This work introduces the CultDiff benchmark, evaluating models on generating culturally specific images across ten countries, revealing significant disparities in cultural relevance, especially for underrepresented regions.
         </div>
       </div>
 
@@ -792,7 +740,7 @@
       <div class="pub-card">
         <div class="pub-title">BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages</div>
         <div class="pub-authors">Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin, Rifki Afina Putri, Dimosthenis Antypas, Hsuvas Borkakoty, <span class="me">Eunsu Kim</span>, et al.</div>
-        <div class="pub-venue">NeurIPS D&amp;B 2025</div>
+        <div class="pub-venue"><span class="pub-tag social">Social &amp; Cultural</span>NeurIPS D&amp;B 2025</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2406.09948">arXiv</a>
           <a href="https://huggingface.co/datasets/nayeon212/BLEnD">Dataset</a>
@@ -803,11 +751,70 @@
         </div>
       </div>
 
+      <!-- MUG-Eval -->
+      <div class="pub-card">
+        <div class="pub-title">MUG-Eval: A Proxy Evaluation Framework for Multilingual Generation Capabilities in Any Language</div>
+        <div class="pub-authors">Seyoung Song*, Seogyeong Jeong*, <span class="me">Eunsu Kim</span>, Jiho Jin, Dongkwan Kim, Jay Shin, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-tag eval">LLM Evaluation</span>EMNLP 2025 (Findings)</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2505.14395">Paper</a>
+        </div>
+      </div>
+
+      <!-- Factor Level Preferences -->
+      <div class="pub-card">
+        <div class="pub-title">Uncovering Factor Level Preferences to Improve Human-Model Alignment</div>
+        <div class="pub-authors">Juhyun Oh*, <span class="me">Eunsu Kim</span>*, Jiseon Kim, Wenda Xu, William Yang Wang, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-tag eval">LLM Evaluation</span>EMNLP 2025 (Findings)</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2410.06965">arXiv</a>
+        </div>
+      </div>
+
+      <!-- BenchHub -->
+      <div class="pub-card">
+        <div class="pub-title">BenchHub: A Unified Benchmark Suite for Holistic and Customizable LLM Evaluation</div>
+        <div class="pub-authors"><span class="me">Eunsu Kim</span>*, Haneul Yoo*, Guijin Son, Hitesh Patel, Amit Agarwal, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-tag eval">LLM Evaluation</span>Preprint, Under Review</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2506.00482">Paper</a>
+        </div>
+      </div>
+
+      <!-- LLM-as-an-Interviewer -->
+      <div class="pub-card">
+        <div class="pub-title">LLM-as-an-Interviewer: Beyond Static Testing Through Dynamic LLM Evaluation</div>
+        <div class="pub-authors"><span class="me">Eunsu Kim</span>, Juyoung Suk, Seungone Kim, Niklas Muennighoff, Dongkwan Kim, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-tag eval">LLM Evaluation</span>ACL 2025 (Findings)</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2412.10424">arXiv</a>
+          <a href="https://github.com/interview-eval/interview-eval/tree/main">Code</a>
+          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
+        </div>
+        <div class="pub-tldr">
+          An evaluation framework that assesses LLM capabilities through an interview-style process. The interviewer LLM evaluates other LLMs by providing feedback and asking follow-up questions, enabling more comprehensive capability assessment beyond static benchmarks.
+        </div>
+      </div>
+
+      <!-- Diffusion Global Lens -->
+      <div class="pub-card">
+        <div class="pub-title">Diffusion Models Through a Global Lens: Are They Culturally Inclusive?</div>
+        <div class="pub-authors">Zahra Bayramli*, Ayhan Suleymanzade*, Na Min An, Huzama Ahmad, <span class="me">Eunsu Kim</span>, Junyeong Park, James Thorne, Alice Oh</div>
+        <div class="pub-venue"><span class="pub-tag social">Social &amp; Cultural</span>ACL 2025 <span class="venue-badge">Oral</span>, NAACL 2025 C3NLP Workshop</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2502.08914">arXiv</a>
+          <a class="tldr-btn" onclick="toggleTldr(this)">TL;DR</a>
+        </div>
+        <div class="pub-tldr">
+          Text-to-image diffusion models can create compelling images from prompts, but their ability to represent cultural nuances remains limited. This work introduces the CultDiff benchmark, evaluating models on generating culturally specific images across ten countries, revealing significant disparities in cultural relevance, especially for underrepresented regions.
+        </div>
+      </div>
+
       <!-- CLIcK -->
       <div class="pub-card">
         <div class="pub-title">CLIcK: Evaluation of Cultural and Linguistic Intelligence in Korean</div>
         <div class="pub-authors"><span class="me">Eunsu Kim</span>, Juyoung Suk, Philhoon Oh, Haneul Yoo, James Thorne, Alice Oh</div>
-        <div class="pub-venue">LREC-COLING 2024</div>
+        <div class="pub-venue"><span class="pub-tag social">Social &amp; Cultural</span>LREC-COLING 2024</div>
         <div class="pub-links">
           <a href="https://arxiv.org/abs/2403.06412">arXiv</a>
           <a href="https://github.com/rladmstn1714/CLIcK">Dataset</a>
@@ -817,6 +824,8 @@
           A culturally-aware evaluation benchmark with 1,995 instances across 11 categories of Korean culture, spanning everyday life to specialized subjects, as well as Korean grammar and linguistics.
         </div>
       </div>
+
+    </section>
 
    
 
