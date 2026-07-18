@@ -64,8 +64,6 @@
     letter-spacing: 0.2px;
     color: #fff;
   }
-  .pub-tag.eval { background: #7C4DFF; }
-  .pub-tag.social { background: #C4633F; }
     /* ── Hero ── */
     .hero {
       padding: 60px 0 50px;
@@ -156,7 +154,7 @@
       font-size: 15px;
       color: var(--text);
       line-height: 1.85;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: -0.01em;
     }
 
@@ -170,23 +168,6 @@
     .bio a:hover {
       color: var(--link-hover);
       border-bottom-color: var(--link-hover);
-    }
-
-    .research-focus {
-      margin: 18px 0;
-      padding: 16px 20px;
-      background: var(--bg-warm);
-      border-radius: var(--radius);
-      border-left: 3px solid var(--accent);
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .research-focus strong {
-      color: var(--text);
-      font-weight: 600;
-      font-size: 14.5px;
     }
 
     .links-bar {
@@ -276,12 +257,12 @@
 
     .affiliation-detail em { font-style: italic; font-weight: 300; }
     .affiliation-detail .date {
-      font-size: 12.5px;
-      font-weight: 500;
+      font-size: 12px;
+      font-weight: 600;
       color: var(--tag-text);
       white-space: nowrap;
       background: var(--tag-bg);
-      padding: 2px 10px;
+      padding: 4px 10px;
       border-radius: 12px;
     }
 
@@ -380,19 +361,6 @@
       font-style: italic;
     }
 
-    .pub-subsection {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--text);
-      margin: 26px 0 14px;
-      padding-bottom: 6px;
-      border-bottom: 1px dashed var(--border);
-    }
-
-    .pub-note + .pub-subsection {
-      margin-top: 18px;
-    }
 .pub-card {
   background: transparent;
   border: none;
@@ -516,14 +484,6 @@
     .news-item:nth-child(6) { animation-delay: 0.3s; }
     .news-item:nth-child(7) { animation-delay: 0.35s; }
 
-    .pub-card:nth-child(2) { animation-delay: 0.05s; }
-    .pub-card:nth-child(3) { animation-delay: 0.1s; }
-    .pub-card:nth-child(4) { animation-delay: 0.15s; }
-    .pub-card:nth-child(5) { animation-delay: 0.2s; }
-    .pub-card:nth-child(6) { animation-delay: 0.25s; }
-    .pub-card:nth-child(7) { animation-delay: 0.3s; }
-    .pub-card:nth-child(8) { animation-delay: 0.35s; }
-
     /* ── Responsive ── */
     @media (max-width: 640px) {
       .hero-inner {
@@ -558,11 +518,6 @@
             I am a master's student advised by Professor <a href="https://aliceoh9.github.io/">Alice Oh</a> at the <a href="https://cs.kaist.ac.kr/">School of Computing, KAIST</a>. Previously, I was a visiting scholar at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, working with Professor <a href="https://www.cs.cmu.edu/~sherryw/">Sherry Tongshuang Wu</a>.
           </p>
 
-          <!-- <p class="bio" style="margin-top: 14px;">
-            I am currently interested in the science of evaluation: what and how we should evaluate in AI systems, with the broader goal of helping everyday users, researchers, and other stakeholders interact and collaborate more effectively with AI.
-            Feel free to reach out if you'd like to collaborate!
-          </p> -->
-
           <div class="links-bar">
             <a href="mailto:kes0317@kaist.ac.kr">Email</a>
             <a href="https://scholar.google.com/citations?user=eoL3C_MAAAAJ&hl=en">Scholar</a>
@@ -585,16 +540,13 @@
     <!-- ════ AFFILIATIONS ════ -->
     <section class="section">
       <h2 class="section-title">Affiliations</h2>
-      
+
       <div class="affiliation">
         <h3>Carnegie Mellon University</h3>
         <div class="affiliation-detail">
-          <em>(Incoming) PhD in School of Computer Science, Language Technology Institution</em>
+          <em>(Incoming) PhD in School of Computer Science, Language Technology Institute</em>
           <span class="date">Sep 2026 – </span>
         </div>
-      </div>
-      <div class="affiliation">
-        <h3>Carnegie Mellon University</h3>
         <div class="affiliation-detail">
           <em>Visiting Scholar in HCII, Host: Sherry Wu</em>
           <span class="date">Sep 2025 – Mar 2026</span>
@@ -619,46 +571,40 @@
     <section class="section">
       <h2 class="section-title">Latest News</h2>
       <div class="news-list">
-  <div class="news-item">
+        <div class="news-item">
           <span class="news-date">Jul 2026</span>
           <div class="news-content">
-            
-             <strong>One paper has been accepted to COLM 2026</strong>!
-           <a href="https://arxiv.org/abs/2605.21363">Co-Trace</a> is a framework for tracing AI’s goal-level contributions in human–AI collaboration from interaction logs. 
+            <strong>One paper has been accepted to COLM 2026</strong>! <a href="https://arxiv.org/abs/2605.21363">Co-Trace</a> is a framework for tracing AI’s goal-level contributions in human–AI collaboration from interaction logs.
           </div>
         </div>
 
         <div class="news-item">
           <span class="news-date">Apr 2026</span>
           <div class="news-content">
-            
-             <strong>Three papers have been accepted to ACL 2026</strong>!
-<a href="https://arxiv.org/abs/2510.19028">Are They Lovers or Friends? (main)</a> investigates how language models infer interpersonal relationships from conversational and contextual cues.
-<a href="https://arxiv.org/abs/2509.25897">RoleConflictBench (findings)</a> introduces a benchmark for evaluating LLMs’ contextual sensitivity in scenarios involving conflicting social roles.
-<a href="https://arxiv.org/abs/2605.21086">LoCar (industry)</a> highlights the importance of localizing LLM agents for in-vehicle applications, with a particular focus on the Korean context, in collaboration with the BMW Group.
+            <strong>Three papers have been accepted to ACL 2026</strong>!
+            <a href="https://arxiv.org/abs/2510.19028">Are They Lovers or Friends? (main)</a> investigates how language models infer interpersonal relationships from conversational and contextual cues.
+            <a href="https://arxiv.org/abs/2509.25897">RoleConflictBench (findings)</a> introduces a benchmark for evaluating LLMs’ contextual sensitivity in scenarios involving conflicting social roles.
+            <a href="https://arxiv.org/abs/2605.21086">LoCar (industry)</a> highlights the importance of localizing LLM agents for in-vehicle applications, with a particular focus on the Korean context, in collaboration with the BMW Group.
           </div>
         </div>
 
         <div class="news-item">
           <span class="news-date">Feb 2026</span>
           <div class="news-content">
-             
-             <strong>One paper has been accepted to CVPR 2026</strong>! <a href="https://arxiv.org/abs/2511.22787">Culture-Mixing</a> investigates how well VLMs understand contexts in which multiple cultures coexist within a single scene or situation.
+            <strong>One paper has been accepted to CVPR 2026</strong>! <a href="https://arxiv.org/abs/2511.22787">Culture-Mixing</a> investigates how well VLMs understand contexts in which multiple cultures coexist within a single scene or situation.
           </div>
         </div>
 
         <div class="news-item">
           <span class="news-date">Dec 2025</span>
           <div class="news-content">
-            
-            <strong>Two papers have been accepted to NeurIPS 2025 Workshops</strong>! <a href="https://arxiv.org/abs/2506.00482">BenchHub</a> @ Efficient Reasoning &amp;  <a href="https://egusphere.copernicus.org/preprints/2026/egusphere-2025-5305/">ML-IAM</a> @ Climate Change with ML
+            <strong>Two papers have been accepted to NeurIPS 2025 Workshops</strong>! <a href="https://arxiv.org/abs/2506.00482">BenchHub</a> @ Efficient Reasoning &amp; <a href="https://egusphere.copernicus.org/preprints/2026/egusphere-2025-5305/">ML-IAM</a> @ Climate Change with ML
           </div>
         </div>
 
         <div class="news-item">
           <span class="news-date">Sep 2025</span>
           <div class="news-content">
-
             Starting as a visiting student at <strong>Carnegie Mellon University</strong>
           </div>
         </div>
@@ -666,7 +612,6 @@
         <div class="news-item">
           <span class="news-date">Aug 2025</span>
           <div class="news-content">
-            
             <strong>Two papers have been accepted to EMNLP 2025 Findings</strong>: <a href="https://arxiv.org/abs/2410.06965">Uncovering Factor Level Preferences</a> &amp; <a href="https://arxiv.org/abs/2505.14395">Mug-Eval</a>
           </div>
         </div>
@@ -674,7 +619,6 @@
         <div class="news-item">
           <span class="news-date">May 2025</span>
           <div class="news-content">
-            
             <strong>Three papers have been accepted to ACL 2025</strong>: <a href="https://aclanthology.org/2025.findings-acl.1357/">LLM-as-an-Interviewer</a> &amp; <a href="https://aclanthology.org/2025.acl-long.1503/">Diffusion Models Through a Global Lens</a> &amp; <a href="https://aclanthology.org/2025.findings-acl.1349/">Spotting Out-of-Character Behavior</a>
           </div>
         </div>
@@ -682,11 +626,9 @@
         <div class="news-item">
           <span class="news-date">Mar 2025</span>
           <div class="news-content">
-            
             <a href="https://arxiv.org/abs/2503.16826">When Tom Eats Kimchi</a> won <strong>Outstanding Paper Award</strong> at NAACL C3NLP!
           </div>
         </div>
-
       </div>
     </section>
 
