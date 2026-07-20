@@ -338,9 +338,18 @@
     }
     .news-item:last-child { border-bottom: none; }
 
-    .news-date {
+    .news-date-col {
       flex-shrink: 0;
       width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .news-date {
+      width: 100%;
       font-size: 12px;
       font-weight: 600;
       color: var(--tag-text);
@@ -348,7 +357,24 @@
       padding: 4px 10px;
       border-radius: 12px;
       text-align: center;
-      margin-top: 2px;
+      box-sizing: border-box;
+    }
+
+    .news-new-badge {
+      display: inline-block;
+      background: var(--accent-hover);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      animation: newPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes newPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(124,77,255,0.35); }
+      50% { box-shadow: 0 0 0 5px rgba(124,77,255,0); }
     }
 
     .news-content {
@@ -557,9 +583,11 @@
       .affiliation-detail .date { align-self: flex-start; }
       .news-list { max-height: 300px; padding-right: 6px; }
       .news-item { flex-direction: column; gap: 6px; }
-      .news-date { width: auto; align-self: flex-start; }
+      .news-date-col { width: auto; flex-direction: row; align-self: flex-start; }
     }
   </style>
+  <!-- GoatCounter analytics -->
+  <script data-goatcounter="https://eunsu-k1m.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -609,7 +637,7 @@
           <span class="date">Sep 2026 – </span>
         </div>
         <div class="affiliation-detail">
-          <em>Visiting Scholar in HCII, Host: Sherry Tongshuang Wu</em>
+          <em>Visiting Scholar in HCII, Host: Sherry Wu</em>
           <span class="date">Sep 2025 – Mar 2026</span>
         </div>
       </div>
@@ -621,10 +649,10 @@
           <span class="date">Sep 2023 – Present</span>
         </div>
         <div class="affiliation-detail">
-          <em>B.S. in Electrical Engineering (Summa Cum Laude)</em>
+          <em>B.S. in Electrical Engineering</em>
           <span class="date">Mar 2019 – Aug 2023</span>
         </div>
-        <!-- <div class="">GPA 4.02 / 4.3, Major 4.11 / 4.3 (Summa Cum Laude)</div> -->
+        <div class="gpa">GPA 4.02 / 4.3, Major 4.11 / 4.3 (Summa Cum Laude)</div>
       </div>
     </section>
 
@@ -633,16 +661,19 @@
       <h2 class="section-title">Latest News</h2>
       <div class="news-list">
         <div class="news-item">
-          <span class="news-date">Jul 2026</span>
+          <div class="news-date-col">
+            <span class="news-date">Jul 2026</span>
+            <span class="news-new-badge">NEW</span>
+          </div>
           <div class="news-content">
-            <strong>One paper accepted to COLM 2026</strong>! <a href="https://arxiv.org/abs/2605.21363">Co-Trace</a> is a framework for tracing AI’s goal-level contributions in human–AI collaboration from interaction logs.
+            <strong>One paper has been accepted to COLM 2026</strong>! <a href="https://arxiv.org/abs/2605.21363">Co-Trace</a> is a framework for tracing AI’s goal-level contributions in human–AI collaboration from interaction logs.
           </div>
         </div>
 
         <div class="news-item">
-          <span class="news-date">Apr 2026</span>
+          <div class="news-date-col"><span class="news-date">Apr 2026</span></div>
           <div class="news-content">
-            <strong>Three papers accepted to ACL 2026</strong>!
+            <strong>Three papers have been accepted to ACL 2026</strong>!
             <a href="https://arxiv.org/abs/2510.19028">Are They Lovers or Friends? (main)</a> investigates how language models infer interpersonal relationships from conversational and contextual cues.
             <a href="https://arxiv.org/abs/2509.25897">RoleConflictBench (findings)</a> introduces a benchmark for evaluating LLMs’ contextual sensitivity in scenarios involving conflicting social roles.
             <a href="https://arxiv.org/abs/2605.21086">LoCar (industry)</a> highlights the importance of localizing LLM agents for in-vehicle applications, with a particular focus on the Korean context, in collaboration with the BMW Group.
@@ -650,42 +681,42 @@
         </div>
 
         <div class="news-item">
-          <span class="news-date">Feb 2026</span>
+          <div class="news-date-col"><span class="news-date">Feb 2026</span></div>
           <div class="news-content">
-            <strong>One paper accepted to CVPR 2026</strong>! <a href="https://arxiv.org/abs/2511.22787">Culture-Mixing</a> investigates how well VLMs understand contexts in which multiple cultures coexist within a single scene or situation.
+            <strong>One paper has been accepted to CVPR 2026</strong>! <a href="https://arxiv.org/abs/2511.22787">Culture-Mixing</a> investigates how well VLMs understand contexts in which multiple cultures coexist within a single scene or situation.
           </div>
         </div>
 
         <div class="news-item">
-          <span class="news-date">Dec 2025</span>
+          <div class="news-date-col"><span class="news-date">Dec 2025</span></div>
           <div class="news-content">
-            <strong>Two papers accepted to NeurIPS 2025 Workshops</strong>! <a href="https://arxiv.org/abs/2506.00482">BenchHub</a> @ Efficient Reasoning &amp; <a href="https://egusphere.copernicus.org/preprints/2026/egusphere-2025-5305/">ML-IAM</a> @ Climate Change with ML
+            <strong>Two papers have been accepted to NeurIPS 2025 Workshops</strong>! <a href="https://arxiv.org/abs/2506.00482">BenchHub</a> @ Efficient Reasoning &amp; <a href="https://egusphere.copernicus.org/preprints/2026/egusphere-2025-5305/">ML-IAM</a> @ Climate Change with ML
           </div>
         </div>
 
         <div class="news-item">
-          <span class="news-date">Sep 2025</span>
+          <div class="news-date-col"><span class="news-date">Sep 2025</span></div>
           <div class="news-content">
             Starting as a visiting student at <strong>Carnegie Mellon University</strong>
           </div>
         </div>
 
         <div class="news-item">
-          <span class="news-date">Aug 2025</span>
+          <div class="news-date-col"><span class="news-date">Aug 2025</span></div>
           <div class="news-content">
-            <strong>Two papers accepted to EMNLP 2025 Findings</strong>: <a href="https://arxiv.org/abs/2410.06965">Uncovering Factor Level Preferences</a> &amp; <a href="https://arxiv.org/abs/2505.14395">Mug-Eval</a>
+            <strong>Two papers have been accepted to EMNLP 2025 Findings</strong>: <a href="https://arxiv.org/abs/2410.06965">Uncovering Factor Level Preferences</a> &amp; <a href="https://arxiv.org/abs/2505.14395">Mug-Eval</a>
           </div>
         </div>
 
         <div class="news-item">
-          <span class="news-date">May 2025</span>
+          <div class="news-date-col"><span class="news-date">May 2025</span></div>
           <div class="news-content">
-            <strong>Three papers accepted to ACL 2025</strong>: <a href="https://aclanthology.org/2025.findings-acl.1357/">LLM-as-an-Interviewer</a> &amp; <a href="https://aclanthology.org/2025.acl-long.1503/">Diffusion Models Through a Global Lens</a> &amp; <a href="https://aclanthology.org/2025.findings-acl.1349/">Spotting Out-of-Character Behavior</a>
+            <strong>Three papers have been accepted to ACL 2025</strong>: <a href="https://aclanthology.org/2025.findings-acl.1357/">LLM-as-an-Interviewer</a> &amp; <a href="https://aclanthology.org/2025.acl-long.1503/">Diffusion Models Through a Global Lens</a> &amp; <a href="https://aclanthology.org/2025.findings-acl.1349/">Spotting Out-of-Character Behavior</a>
           </div>
         </div>
 
         <div class="news-item">
-          <span class="news-date">Mar 2025</span>
+          <div class="news-date-col"><span class="news-date">Mar 2025</span></div>
           <div class="news-content">
             <a href="https://arxiv.org/abs/2503.16826">When Tom Eats Kimchi</a> won <strong>Outstanding Paper Award</strong> at NAACL C3NLP!
           </div>
